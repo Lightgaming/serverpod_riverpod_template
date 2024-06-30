@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: postgres:14.1
+    ports:
+      - '8090:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: serverpod_riverpod_template
+      POSTGRES_PASSWORD: "xjk4SckH6XuxFuNrrpPT0sWDROh8utKB"
+    volumes:
+      - serverpod_riverpod_template_data:/var/lib/postgresql/data
+  redis:
+    image: redis:6.2.6
+    ports:
+      - '8091:6379'
+    command: redis-server --requirepass "Ix4Nk02PLH9uRKkRldRi7RanFmZ6lKEO"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+volumes:
+  serverpod_riverpod_template_data:
