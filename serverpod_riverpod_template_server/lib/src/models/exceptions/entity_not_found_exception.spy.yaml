@@ -1,0 +1,4 @@
+exception: EntityNotFoundException
+fields:
+  message: String
+  errorType: ErrorType

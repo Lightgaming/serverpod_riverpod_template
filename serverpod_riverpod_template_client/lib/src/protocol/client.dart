@@ -10,19 +10,40 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod_client/serverpod_client.dart' as _i1;
 import 'dart:async' as _i2;
-import 'protocol.dart' as _i3;
+import 'package:serverpod_riverpod_template_client/src/protocol/models/note.dart'
+    as _i3;
+import 'protocol.dart' as _i4;
 
 /// {@category Endpoint}
-class EndpointExample extends _i1.EndpointRef {
-  EndpointExample(_i1.EndpointCaller caller) : super(caller);
+class EndpointNote extends _i1.EndpointRef {
+  EndpointNote(_i1.EndpointCaller caller) : super(caller);
 
   @override
-  String get name => 'example';
+  String get name => 'note';
 
-  _i2.Future<String> hello(String name) => caller.callServerEndpoint<String>(
-        'example',
-        'hello',
-        {'name': name},
+  /// Creates a new note with the provided text.
+  /// Returns the created note.
+  _i2.Future<_i3.Note> createNote(String text) =>
+      caller.callServerEndpoint<_i3.Note>(
+        'note',
+        'createNote',
+        {'text': text},
+      );
+
+  /// Returns a list of all notes.
+  _i2.Future<List<_i3.Note>> getNotes() =>
+      caller.callServerEndpoint<List<_i3.Note>>(
+        'note',
+        'getNotes',
+        {},
+      );
+
+  /// Deletes a note by id.
+  /// Returns the number of notes deleted (0 or 1).
+  _i2.Future<int> deleteNoteById(int id) => caller.callServerEndpoint<int>(
+        'note',
+        'deleteNoteById',
+        {'id': id},
       );
 }
 
@@ -35,19 +56,19 @@ class Client extends _i1.ServerpodClient {
     Duration? connectionTimeout,
   }) : super(
           host,
-          _i3.Protocol(),
+          _i4.Protocol(),
           securityContext: securityContext,
           authenticationKeyManager: authenticationKeyManager,
           streamingConnectionTimeout: streamingConnectionTimeout,
           connectionTimeout: connectionTimeout,
         ) {
-    example = EndpointExample(this);
+    note = EndpointNote(this);
   }
 
-  late final EndpointExample example;
+  late final EndpointNote note;
 
   @override
-  Map<String, _i1.EndpointRef> get endpointRefLookup => {'example': example};
+  Map<String, _i1.EndpointRef> get endpointRefLookup => {'note': note};
 
   @override
   Map<String, _i1.ModuleEndpointCaller> get moduleLookup => {};
