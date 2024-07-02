@@ -1,2 +1,91 @@
-# ignore .dart tool
-.dart_tool
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+.env
+*.env
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/*
+**.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+**/.dart_tool/
+**/build/
+**/.packages
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+./**/.dart_tool/
+./**/build/
+./**/.packages
+./**/.flutter-plugins
+./**/.flutter-plugins-dependencies
+
+# Web related
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/.gradle
+/android/app/.gradle
+/android/app/build
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Exclude ios builds
+**/ios/*.ipa
+**/ios/*.app.dSYM.zip
+**/ios/build
+ios/build
+ios/build/*
+
+.history/*
+.history
+
+# exclude env variables
+#.env.production
+
+# tests
+coverage
+coverage/*
+report.xml
+Makefile
+
+# exclude pubspec.lock
+*\pubspec.lock
+pubspec.lock
+
+# OSX ephermal files
+macos/Flutter/ephemeral/flutter_export_environment.sh
+macos/Flutter/ephemeral/Flutter-Generated.xcconfig
+
+# Testing tool
+genhtml.perl
