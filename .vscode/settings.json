@@ -1,0 +1,15 @@
+{
+    "dart.previewFlutterUiGuides": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
+    },
+    "explorer.fileNesting.patterns": {
+      "*.dart": "${capture}.g.dart, ${capture}.freezed.dart"
+    },
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": false,
+}

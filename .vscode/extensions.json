@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "alexisvt.flutter-snippets",
+        "dart-code.flutter",
+        "localizely.flutter-intl",
+        "robert-brunhage.flutter-riverpod-snippets",
+        "google.arb-editor",
+        "aaron-bond.better-comments",
+        "ryanluker.vscode-coverage-gutters",
+        "orestesgaolin.dart-export-index",
+        "usernamehw.errorlens"
+    ]
+}
