@@ -1,0 +1,19 @@
+name: serverpod_riverpod_template
+
+packages:
+  - serverpod_riverpod_template_client
+  - serverpod_riverpod_template_server
+  - serverpod_riverpod_template_flutter
+
+scripts:
+  # the install command (this can be run to bootstrap the project for real)
+  install:
+    run: melos bs && melos build_runner && melos install:dependencies
+    description: Run all static analysis checks.
+
+  build_runner:
+    run: dart run build_runner build --delete-conflicting-outputs
+    description: Runs build runner
+    packageFilters: 
+      dependsOn:
+        - build_runner
